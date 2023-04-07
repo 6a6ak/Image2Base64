@@ -9,7 +9,8 @@
 
         reader.onload = function(event) {
           const img = document.createElement("img");
-          img.src = "data:image/png;base64," + event.target.result.split(",")[1];
+          const format = document.getElementById("formatSelect").value;
+          img.src = "data:" + format + ";base64," + event.target.result.split(",")[1];
           document.getElementById("imagePreview").innerHTML = "";
           document.getElementById("imagePreview").appendChild(img);
           document.getElementById("base64Data").value = event.target.result;
@@ -32,6 +33,13 @@
     <form>
       <label for="fileInput">Select an image:</label>
       <input type="file" id="fileInput" onchange="handleFileSelect(event)">
+      <br>
+      <label for="formatSelect">Select image format:</label>
+      <select id="formatSelect">
+        <option value="image/png">PNG</option>
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/gif">GIF</option>
+      </select>
     </form>
     <div id="imagePreview"></div>
     <div>
