@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image to Base64</title>
+    <script>
+      function handleFileSelect(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+          const img = document.createElement("img");
+          img.src = "data:image/png;base64," + event.target.result.split(",")[1];
+          document.getElementById("imagePreview").innerHTML = "";
+          document.getElementById("imagePreview").appendChild(img);
+          document.getElementById("base64Data").value = event.target.result;
+        };
+
+        reader.readAsDataURL(file);
+      }
+
+      function copyToClipboard() {
+        const base64Data = document.getElementById("base64Data");
+        base64Data.select();
+        document.execCommand("copy");
+        alert("Base64 data copied to clipboard!");
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Image to Base64</h1>
+    <form>
+      <label for="fileInput">Select an image:</label>
+      <input type="file" id="fileInput" onchange="handleFileSelect(event)">
+    </form>
+    <div id="imagePreview"></div>
+    <div>
+      <label for="base64Data">Base64-encoded data:</label>
+      <textarea id="base64Data"></textarea>
+      <button type="button" onclick="copyToClipboard()">Copy to clipboard</button>
+    </div>
+  </body>
+</html>
