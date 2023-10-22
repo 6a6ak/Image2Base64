@@ -3,55 +3,8 @@
 <head>
     <title>Image to Base64</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      /* Custom styles to complement Bootstrap */
-      body {
-        background-color: #ffecd1;
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABHCAMAAABsx9RCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRFDg4OJCQkHR0dAaydVgAAAOhJREFUeNrsVlEWhCAInLz/oRfSAD9Cc/YTX710BEMEHFzSmrfraTsYpDk8gG1MugoP7B63TWxMQEB9EAxbY66sNgVBtXJgQFQOcqYsluhrqhPmhk9yHe5jQ/uGulMG9i6nQ9jHjRG5Z8qMcTn/iSuguW5DmLydHRY2Zd/T3FvMLtbO7VrsKvfIwp9bZ/F2knkUII+hPP6QR28e5cjzJs8vHGSxYfhePxxj/0ztmfA2dc5UhFGxTWUVl89cJeFqGFU9ubpN3RjsXXV8S57fzxQzKE5SnKQ4SXGS4iTFSYqTFCf5Dyf5CTAA+tkVoYojdMQAAAAASUVORK5CYII=');
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .container {
-        border-left: 10px solid #c7fa74;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-
-      textarea {
-        width: 100%;
-      }
-    </style>
-    <script>
-      function handleFileSelect(event) {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function(event) {
-          const img = document.createElement("img");
-          const format = document.getElementById("formatSelect").value;
-          img.src = "data:" + format + ";base64," + event.target.result.split(",")[1];
-          img.classList.add("img-fluid");  // Bootstrap class for responsive images
-          document.getElementById("imagePreview").innerHTML = "";
-          document.getElementById("imagePreview").appendChild(img);
-          document.getElementById("base64Data").value = event.target.result;
-        };
-
-        reader.readAsDataURL(file);
-      }
-
-      function copyToClipboard() {
-        const base64Data = document.getElementById("base64Data");
-        base64Data.select();
-        document.execCommand("copy");
-        alert("Base64 data copied to clipboard!");
-      }
-    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div class="container">
