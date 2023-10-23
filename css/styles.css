@@ -1,0 +1,22 @@
+body {
+    background-color: #ffecd1;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABHCAMAAABsx9RCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRFDg4OJCQkHR0dAaydVgAAAOhJREFUeNrsVlEWhCAInLz/oRfSAD9Cc/YTX710BEMEHFzSmrfraTsYpDk8gG1MugoP7B63TWxMQEB9EAxbY66sNgVBtXJgQFQOcqYsluhrqhPmhk9yHe5jQ/uGulMG9i6nQ9jHjRG5Z8qMcTn/iSuguW5DmLydHRY2Zd/T3FvMLtbO7VrsKvfIwp9bZ/F2knkUII+hPP6QR28e5cjzJs8vHGSxYfhePxxj/0ztmfA2dc5UhFGxTWUVl89cJeFqGFU9ubpN3RjsXXV8S57fzxQzKE5SnKQ4SXGS4iTFSYqTFCf5Dyf5CTAA+tkVoYojdMQAAAAASUVORK5CYII=');
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    border-left: 10px solid #c7fa74;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+textarea {
+    width: 100%;
+}
